@@ -1,10 +1,69 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/login">LogIn</router-link>|
-    <router-link to="/signup">Signup</router-link>
-  </nav>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">StreamSiteCity</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDarkDropdown" aria-controls="navbarNavDarkDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#"><router-link to="/">Home</router-link></a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Movies
+          </a>
+          <ul class="dropdown-menu dropdown-menu-dark">
+            <li><a class="dropdown-item" href="#">Horror</a></li>
+            <li><a class="dropdown-item" href="#">Family</a></li>
+            <li><a class="dropdown-item" href="#">Action</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Series
+          </a>
+          <ul class="dropdown-menu dropdown-menu-dark">
+            <li><a class="dropdown-item" href="#">New</a></li>
+            <li><a class="dropdown-item" href="#">Trending</a></li>
+            <li><a class="dropdown-item" href="#">Anime</a></li>
+          </ul>
+          
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#"><router-link to="/login">Login</router-link></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#"><router-link to="/signup">Signup</router-link></a>
+        </li>
+        
+      </ul>
+      
+    </div>
+    <form class="d-flex" role="search">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        
+      </form>
+  </div>
+</nav>
+
   <router-view/>
+ 
+
+  <footer class="text-center text-white fixed-bottom" style="background-color: #21081a;">
+    <!-- Grid container -->
+    <div class="container p-4"></div>
+    <!-- Grid container -->
+  
+    <!-- Copyright -->
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+      © 2022 Copyright:
+      <a class="text-white" href="https://mdbootstrap.com/">streamsitecity.netifly.app</a>
+    </div>
+    <!-- Copyright -->
+  </footer>
 </template>
 
 <style lang="scss">
@@ -13,18 +72,19 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
+  color: #f8f8f8;
+  background-color: rgb(36, 33, 33);
 }
 
 nav {
   padding: 30px;
-
+ 
   a {
     font-weight: bold;
-    color: #2c3e50;
+    color: #af0abe;
 
     &.router-link-exact-active {
-      color: #42b983;
+      color: #af0abe;
     }
   }
 }
