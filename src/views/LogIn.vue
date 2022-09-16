@@ -1,4 +1,5 @@
 <template>
+  <div class="logindiv">
   <div class="about">
   <h1>This is an login page</h1>
   <div class="container">
@@ -25,5 +26,15 @@
   <div class="col-sm"></div>
   </div>
   </div>
+
   </div>
+</div>
  </template>
+ <style>
+.logindiv{
+  margin-top: 10%;
+  
+};
+
+
+ </style>

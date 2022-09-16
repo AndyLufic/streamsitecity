@@ -1,7 +1,7 @@
 <template>
-    <div class="about">
+    <div class="about logindiv">
     <h1>This is a signup page</h1>
-    <div class="container">
+    <div class="container ">
     <div class="row">
     <div class="col-sm"></div>
     <div class="col-sm">
@@ -27,3 +27,12 @@
     </div>
     </div>
    </template>
+
+<style>
+    .logindiv{
+      margin-top: 10%;
+      
+    };
+    
+    
+     </style>
