@@ -53,14 +53,10 @@
   <router-view/>
  
 
-<<<<<<< HEAD
   <footer class="text-center text-white fixed-bottom" style="background-color: #21081a; opacity: 35%;  height: ;">
     <!-- Grid container -->
     <div class="container p-4"></div>
     <!-- Grid container -->
-=======
-  <footer class="text-center text-white fixed-bottom" style="background-color: #25BA84;">
->>>>>>> bfd5d8c59f4b176010445ea0216b7f1a3367fc67
   
     <!-- Copyright -->
     <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
