@@ -52,10 +52,7 @@
   <router-view/>
  
 
-  <footer class="text-center text-white fixed-bottom" style="background-color: #21081a;">
-    <!-- Grid container -->
-    <div class="container p-4"></div>
-    <!-- Grid container -->
+  <footer class="text-center text-white fixed-bottom" style="background-color: #25BA84;">
   
     <!-- Copyright -->
     <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
@@ -81,11 +78,15 @@ nav {
  
   a {
     font-weight: bold;
-    color: #af0abe;
+    color: #25BA84;
 
     &.router-link-exact-active {
-      color: #af0abe;
+      color: #2F2E2E;
     }
   }
+}
+
+body {
+  background: #2F2E2E;
 }
 </style>
