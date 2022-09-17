@@ -1,13 +1,15 @@
 <template>
  <div class="card text-center">
   <div class="card-header bg-sh">
-    Featured 
+ 
   </div>
   <div class="card-body p-0 bg-sh" >
-   <img class="card-img-top w-75" :src="info" alt="something"/>
+    <a :href="info.watch">
+   <img class="card-img-top w-75" :src="info.url" alt="something"/>
+    </a>
   </div>
   <div class="card-footer text-muted bg-sh">
-   Avengers
+    {{info.description}}
   </div>
   </div>
 </template>
