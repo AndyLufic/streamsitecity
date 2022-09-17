@@ -16,9 +16,9 @@
             Movies
           </a>
           <ul class="dropdown-menu dropdown-menu-dark">
-            <li><a class="dropdown-item" href="#">Horror</a></li>
-            <li><a class="dropdown-item" href="#">Family</a></li>
-            <li><a class="dropdown-item" href="#">Action</a></li>
+            <li><a class="dropdown-item" href="#"><router-link to="/horror">Horror</router-link></a></li>
+            <li><a class="dropdown-item" href="#"><router-link to="/action">Action</router-link></a></li>
+            <li><a class="dropdown-item" href="#"><router-link to="/family">Family</router-link></a></li>
           </ul>
         </li>
         <li class="nav-item dropdown">
@@ -26,9 +26,9 @@
             Series
           </a>
           <ul class="dropdown-menu dropdown-menu-dark">
-            <li><a class="dropdown-item" href="#">New</a></li>
-            <li><a class="dropdown-item" href="#">Trending</a></li>
-            <li><a class="dropdown-item" href="#">Anime</a></li>
+            <li><a class="dropdown-item" href="#"><router-link to="/new">New</router-link></a></li>
+            <li><a class="dropdown-item" href="#"><router-link to="/trending">Trending</router-link></a></li>
+            <li><a class="dropdown-item" href="#"><router-link to="/anime">Anime</router-link></a></li>
           </ul>
           
         </li>
@@ -43,23 +43,22 @@
       
     </div>
     <form class="d-flex" role="search">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <input v-model="store.searchTerm" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
         
       </form>
   </div>
 </nav>
 
+
   <router-view/>
  
 
   <footer class="text-center text-white fixed-bottom" style="background-color: #25BA84;">
-  
-    <!-- Copyright -->
+    
     <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
       © 2022 Copyright:
       <a class="text-white" href="https://mdbootstrap.com/">streamsitecity.netifly.app</a>
     </div>
-    <!-- Copyright -->
   </footer>
 </template>
 
@@ -90,3 +89,17 @@ body {
   background: #2F2E2E;
 }
 </style>
+<script>
+  import store from "@/store.js"
+
+export default{
+  name: "app",
+  data (){
+    return{
+      store: store,
+
+    }
+  }
+
+};
+</script>
