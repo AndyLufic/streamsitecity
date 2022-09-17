@@ -11,19 +11,13 @@
 
     <div class="form-group">
     <label for="exampleInputEmail1">Email address</label>
-    <input type="email" v-model="email" class="form-control"
+    <input type="email" v-model="username" class="form-control"
    id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" />
     <small id="emailHelp" class="form-text text-muted" >We'll
    never share your email with anyone else.</small>
     </div>
 
     <div class="form-group">
-    <label for="exampleInputPassword1">Username</label>
-    <input type="password" v-model="username" class="form-control"
-   id="exampleInputPassword1" placeholder="Username" />
-    </div>
-
-     <div class="form-group">
     <label for="exampleInputPassword1">Password</label>
     <input type="password" v-model="password" class="form-control"
    id="exampleInputPassword1" placeholder="Password" />
@@ -35,7 +29,7 @@
    id="exampleInputPassword1" placeholder="Reopeat Password" />
     </div>
 
-    <button type="button" @click="prijava" class="btn btn-primary">Submit</button>
+    <button type="button" @click="signup" class="btn btn-primary">Submit</button>
 
     </form>
 
@@ -46,29 +40,35 @@
     </div>
    </template>
 
-    <script>
+   <script>
 
-        import { firebase } from '@/firebase';
+        import firebase from '@/firebase';
 
         export default {
-            name: 'Signup',
-            data() {
+            name: 'signup',
+            data(){
                 return{
-                    email:"",
                     username:"",
                     password:"",
                     passwordrepeat:"",
                 };
             },
 
-            methods: {
-            Signup() {
-                console.log(firebase);
-            },
+        methods: {
+            signup() {
+                firebase.auth().createUserWithEmailAndPassword(this.username, this.pasword ), then (
+                    function(){
+                        console.log("signup successful");
+
+                    }).catch(function(){
+                        console.error("Error ", error)
+                    }
+                );
+                console.log("nastavak")
 
         },
+        },
         };
-
        
 
     </script>
