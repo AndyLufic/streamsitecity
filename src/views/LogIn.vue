@@ -1,12 +1,14 @@
 <template>
   <div class="logindiv">
   <div class="about">
-  <h1>This is an login page</h1>
+  
   <div class="container">
   <div class="row">
   <div class="col-sm"></div>
   <div class="col-sm">
-  <form>
+
+  <form class="position-absolute top-50 start-50 translate-middle">
+  <h1>This is an login page</h1>
   <div class="form-group">
   <label for="exampleInputEmail1">Email address</label>
   <input type="email" class="form-control"
@@ -30,11 +32,11 @@
   </div>
 </div>
  </template>
- <style>
-.logindiv{
-  margin-top: 10%;
-  
-};
 
+ <style scoped>
+   .form-group{
+    margin-top: 20px;
+    margin-bottom: 20px;
+   }
+  </style>
 
- </style>
