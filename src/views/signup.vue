@@ -11,7 +11,7 @@
 
     <div class="form-group">
     <label for="exampleInputEmail1">Email address</label>
-    <input type="email" class="form-control"
+    <input type="email" v-model="email" class="form-control"
    id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" />
     <small id="emailHelp" class="form-text text-muted" >We'll
    never share your email with anyone else.</small>
@@ -19,17 +19,23 @@
 
     <div class="form-group">
     <label for="exampleInputPassword1">Username</label>
-    <input type="password" class="form-control"
+    <input type="password" v-model="username" class="form-control"
    id="exampleInputPassword1" placeholder="Username" />
     </div>
 
      <div class="form-group">
     <label for="exampleInputPassword1">Password</label>
-    <input type="password" class="form-control"
+    <input type="password" v-model="password" class="form-control"
    id="exampleInputPassword1" placeholder="Password" />
     </div>
 
-    <button type="submit" class="btn btn-primary">Submit</button>
+    <div class="form-group">
+    <label for="exampleInputPassword1">Repeat Password</label>
+    <input type="password" v-model="passwordrepeat" class="form-control"
+   id="exampleInputPassword1" placeholder="Reopeat Password" />
+    </div>
+
+    <button type="button" @click="prijava" class="btn btn-primary">Submit</button>
 
     </form>
 
@@ -40,9 +46,37 @@
     </div>
    </template>
 
+    <script>
+
+        import { firebase } from '@/firebase';
+
+        export default {
+            name: 'Signup',
+            data() {
+                return{
+                    email:"",
+                    username:"",
+                    password:"",
+                    passwordrepeat:"",
+                };
+            },
+
+            methods: {
+            Signup() {
+                console.log(firebase);
+            },
+
+        },
+        };
+
+       
+
+    </script>
+
    <style scoped>
    .form-group{
     margin-top: 20px;
     margin-bottom: 20px;
    }
+
    </style>
