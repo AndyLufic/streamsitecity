@@ -32,11 +32,19 @@
           </ul>
           
         </li>
-        <li class="nav-item">
+
+      
+        <li v-if=" ! store.currentUser" class="nav-item">
           <a class="nav-link active" aria-current="page" href="#"><router-link to="/login">Login</router-link></a>
         </li>
+      
+
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="#"><router-link to="/signup">Signup</router-link></a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#" @click="logout()">Logout</a>
         </li>
         
       </ul>
@@ -89,17 +97,51 @@ body {
   background: #2F2E2E;
 }
 </style>
+
 <script>
-  import store from "@/store.js"
+  import { auth, onAuthStateChanged, signOut } from "@/firebase";
+
+  import store from "@/store";
+
+  import router from '@/router';
+
+
+
+onAuthStateChanged(auth, user => {
+
+
+  if (user) {
+    console.log(user.email);
+    store.currentUser = user.email;
+  }
+  else{
+    console.log("No User");
+    store.currentUser = null;
+
+    if (router.name !== 'login'){
+
+    router.push({name: "login"})
+
+    }
+
+  }
+})
+
 
 export default{
   name: "app",
   data (){
     return{
-      store: store,
+      store,
 
     }
-  }
-
+  },
+  methods: {
+    logout(){
+      signOut ( auth ).then(() => {
+          this.$router.push({ name: 'login' })
+      }) ; 
+    },
+  },
 };
 </script>

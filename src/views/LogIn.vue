@@ -25,7 +25,7 @@
  id="exampleInputPassword1" placeholder="Password" />
   </div>
 
-  <button type="button" @click= "login()" class="btn btn-primary">Submit</button>
+  <button type="button" @click= "login()" class="btn btn-primary">Login</button>
 
   </form>
   </div>
@@ -53,10 +53,12 @@
   }, 
   methods: {
     login() {
+
       signInWithEmailAndPassword(auth, this.email, this.password)
         .then((result) => {
           this.$router.replace({ name: "home" });
-          console.log(result);
+          console.log('Login Successful', result);
+
         })
         .catch((error) => {
           alert(error);
