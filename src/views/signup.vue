@@ -17,25 +17,15 @@
    never share your email with anyone else.</small>
     </div>
 
-    <div class="form-group">
-    <label for="exampleInputPassword1">Username</label>
-    <input type="password" v-model="username" class="form-control"
-   id="exampleInputPassword1" placeholder="Username" />
-    </div>
 
      <div class="form-group">
-    <label for="exampleInputPassword1">Password</label>
+    <label for="exampleInputPassword">Password</label>
     <input type="password" v-model="password" class="form-control"
-   id="exampleInputPassword1" placeholder="Password" />
+   id="exampleInputPassword" placeholder="Password" />
     </div>
 
-    <div class="form-group">
-    <label for="exampleInputPassword1">Repeat Password</label>
-    <input type="password" v-model="passwordrepeat" class="form-control"
-   id="exampleInputPassword1" placeholder="Reopeat Password" />
-    </div>
 
-    <button type="button" @click="prijava" class="btn btn-primary">Submit</button>
+    <button type="button" @click="register()" class="btn btn-primary">Submit</button>
 
     </form>
 
@@ -46,32 +36,34 @@
     </div>
    </template>
 
-    <script>
+<script >
 
-        import { firebase } from '@/firebase';
 
-        export default {
-            name: 'Signup',
-            data() {
-                return{
-                    email:"",
-                    username:"",
-                    password:"",
-                    passwordrepeat:"",
-                };
-            },
+    import { auth, createUserWithEmailAndPassword } from "@/firebase";
 
-            methods: {
-            Signup() {
-                console.log(firebase);
-            },
+    export default{
+        name: "signup",
+     data() {
+        return {
+          email: "",
+         password: "",
+      };
+    }, 
+    methods: {
+        register(){
+        createUserWithEmailAndPassword(auth, this.email, this.password)
+              .then(console.log("Uspjesna registracija"))
+              .catch(function (error) {
+                alert(error);
+              });
 
-        },
-        };
-
-       
-
-    </script>
+    }
+    }
+    }
+    
+   
+ 
+</script>
 
    <style scoped>
    .form-group{
