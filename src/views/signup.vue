@@ -17,24 +17,15 @@
    never share your email with anyone else.</small>
     </div>
 
-<<<<<<< HEAD
 
      <div class="form-group">
     <label for="exampleInputPassword">Password</label>
-=======
-    <div class="form-group">
-    <label for="exampleInputPassword1">Password</label>
->>>>>>> 3f8f2dc8c9f79c37b0cc17542a90b6498bd8f9fc
     <input type="password" v-model="password" class="form-control"
    id="exampleInputPassword" placeholder="Password" />
     </div>
 
 
-<<<<<<< HEAD
     <button type="button" @click="register()" class="btn btn-primary">Submit</button>
-=======
-    <button type="button" @click="signup" class="btn btn-primary">Submit</button>
->>>>>>> 3f8f2dc8c9f79c37b0cc17542a90b6498bd8f9fc
 
     </form>
 
@@ -45,7 +36,6 @@
     </div>
    </template>
 
-<<<<<<< HEAD
 <script >
 
 
@@ -74,40 +64,6 @@
    
  
 </script>
-=======
-   <script>
-
-        import firebase from '@/firebase';
-
-        export default {
-            name: 'signup',
-            data(){
-                return{
-                    username:"",
-                    password:"",
-                    passwordrepeat:"",
-                };
-            },
-
-        methods: {
-            signup() {
-                firebase.auth().createUserWithEmailAndPassword(this.username, this.pasword ), then (
-                    function(){
-                        console.log("signup successful");
-
-                    }).catch(function(){
-                        console.error("Error ", error)
-                    }
-                );
-                console.log("nastavak")
-
-        },
-        },
-        };
-       
-
-    </script>
->>>>>>> 3f8f2dc8c9f79c37b0cc17542a90b6498bd8f9fc
 
    <style scoped>
    .form-group{
