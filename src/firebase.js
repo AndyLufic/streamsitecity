@@ -1,13 +1,7 @@
-<<<<<<< HEAD
 
 import { initializeApp } from 'firebase/app';
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
 
-=======
-import { initializeApp } from 'firebase/app';
-import 'firebase/auth';
-import 'firebase/firestore';
->>>>>>> 3f8f2dc8c9f79c37b0cc17542a90b6498bd8f9fc
 
 const firebaseConfig = {
     apiKey: "AIzaSyBhDX9NX_k30HdP94Tb3JmCiviwUDd6YXk",
@@ -19,7 +13,6 @@ const firebaseConfig = {
   };
   
   // Initialize Firebase
-<<<<<<< HEAD
    const app= initializeApp(firebaseConfig);
 
    const auth = getAuth(app);
@@ -27,8 +20,3 @@ const firebaseConfig = {
   export {
   auth,createUserWithEmailAndPassword, signInWithEmailAndPassword,
   };
-=======
-  const firebase = initializeApp(firebaseConfig);
-
-  export default firebase;
->>>>>>> 3f8f2dc8c9f79c37b0cc17542a90b6498bd8f9fc
