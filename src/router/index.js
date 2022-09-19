@@ -96,7 +96,23 @@ const routes = [
     meta: {
       needsUser: true
     }
-  }
+  },
+  {
+    path: '/houseofdragon',
+    name: 'houseofdragon',
+    // route level code-splitting
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: () => import(/* webpackChunkName: "about" */ '../views/houseofdragon.vue'),
+  },
+  {
+    path: '/adminpanel',
+    name: 'adminpanel',
+    // route level code-splitting
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: () => import(/* webpackChunkName: "about" */ '../views/adminpanel.vue'),
+  },
 ]
 
 const router = createRouter({
