@@ -1,19 +1,12 @@
-# streamsitecity
 
-## Project setup
-```
-npm install
-```
+Naziv aplikeacije: StreamSiteCity 
+- Fakultet informatike u Puli https://fipu.unipu.hr
+- Kolegij: Programsko inženjerstvo, ntankovic.unipu.hr/pi
+- Mentor: doc. dr. sc. Nikola Tanković, ntankovic.unipu.hr
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+Aplikacija služi kao streaming usluga za razne filmove, serije animirane filmove i slično. 
+omogućuje korisniku aplikacije LogIn I signup funkcije, sadrži web player 
 
-### Compiles and minifies for production
-```
-npm run build
-```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+- Link na javni prototip
+- Zaduženja (planirana) po članu tima - ovaj dio commita svaki član tima za sebe.
