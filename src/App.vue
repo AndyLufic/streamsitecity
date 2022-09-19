@@ -46,6 +46,12 @@
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="#" @click="logout()">Logout</a>
         </li>
+
+        
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#"><router-link to="/adminpanel">Adminpanel</router-link></a>
+        </li>
+        
         
       </ul>
       

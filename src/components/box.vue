@@ -4,7 +4,7 @@
  
   </div>
   <div class="card-body p-0 bg-sh" >
-    <a :href="info.watch">
+    <a :href="info">
    <img class="card-img-top w-75" :src="info.url" alt="something"/>
     </a>
   </div>
