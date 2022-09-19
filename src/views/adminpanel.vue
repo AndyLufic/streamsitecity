@@ -8,6 +8,8 @@
    id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="image" />
    <input type="" v-model="deskript" class="form-control"
    id="exampleInputEmail1" aria-describedby="description" placeholder="description" />
+   <input type="" v-model="watch" class="form-control"
+   id="exampleInputEmail1" aria-describedby="description" placeholder="Link" />
 
     
     </div>
@@ -25,6 +27,7 @@ export default {
     return {
         addimage: "",
         deskript: "",
+        watch: "", 
         
         
     }
@@ -35,6 +38,7 @@ export default {
         const docRef = addDoc(collection(db, "filmovi"), {
           link: this.addimage,
           deskription: this.deskript,
+          watch: this.watch, 
           
           
         });

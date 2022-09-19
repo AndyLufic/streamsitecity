@@ -4,7 +4,7 @@
  
   </div>
   <div class="card-body p-0 bg-sh" >
-    <a :href="info">
+    <a :href="info.watch">
    <img class="card-img-top w-75" :src="info.url" alt="something"/>
     </a>
   </div>
@@ -28,6 +28,7 @@ export default {
   background-color: rgb(36, 33, 33);
   border: rgb(36, 33, 33)
   text white
+  
 } 
   
   

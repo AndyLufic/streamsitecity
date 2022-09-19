@@ -32,7 +32,7 @@
 
   let cards
     cards= [
-    {"url": "https://firebasestorage.googleapis.com/v0/b/streamsitecity.appspot.com/o/preuzimanje.jpg?alt=media&token=f9976120-028c-4885-b15a-bfa39b2503b0", "description": "The Conjuring" },
+    {"url": "https://firebasestorage.googleapis.com/v0/b/streamsitecity.appspot.com/o/preuzimanje.jpg?alt=media&token=f9976120-028c-4885-b15a-bfa39b2503b0", "description": "The Conjuring", "watch": "https://bflix.gg/watch-movie/watch-the-conjuring-19532.5297707" },
     {"url":"https://firebasestorage.googleapis.com/v0/b/streamsitecity.appspot.com/o/61pzIOPuCxL._SL1200_.jpg?alt=media&token=4d48f179-62b5-40f0-b5b2-26446731bbe2", "description": "Anabelle 2 "},
     {"url":"https://firebasestorage.googleapis.com/v0/b/streamsitecity.appspot.com/o/img239091-tv2986258.jpg?alt=media&token=8eab449d-a7af-4869-a375-8fbe9dfa5abd", "description": "Anabelle"}
     ];

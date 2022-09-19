@@ -8,7 +8,6 @@
       
     </div>
   </div>
-  <button @click="puni()"></button>
  <div class="row">
 
  
@@ -18,7 +17,7 @@
  
   
   <div class="card-body p-0 bg-sh" >
-    <a >
+     <a :href="card.watch">
    <img class="card-img-top w-75" :src="card.link" alt="something"/>
     </a>
   </div>
