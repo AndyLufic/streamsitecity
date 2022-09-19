@@ -1,11 +1,16 @@
+import vue from 'vue';
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
+import store from "@/store"
 
 const routes = [
   {
     path: '/',
     name: 'home',
-    component: HomeView
+    component: HomeView,
+    meta: {
+      needsUser: true
+    }
   },
   {
     path: '/login',
@@ -13,7 +18,7 @@ const routes = [
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/LogIn.vue'),
+    component: () => import(/* webpackChunkName: "about" */ '../views/LogIn.vue')
   },
   {
     path: '/signup',
@@ -21,7 +26,10 @@ const routes = [
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/signup.vue')
+    component: () => import(/* webpackChunkName: "about" */ '../views/signup.vue'),
+    meta: {
+      needsUser: true
+    }
   },
   {
     path: '/horror',
@@ -29,7 +37,10 @@ const routes = [
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/Horror.vue')
+    component: () => import(/* webpackChunkName: "about" */ '../views/Horror.vue'),
+    meta: {
+      needsUser: true
+    }
   },
   {
     path: '/action',
@@ -37,7 +48,10 @@ const routes = [
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/Action.vue')
+    component: () => import(/* webpackChunkName: "about" */ '../views/Action.vue'),
+    meta: {
+      needsUser: true
+    }
   },
   {
     path: '/family',
@@ -45,7 +59,10 @@ const routes = [
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/Family.vue')
+    component: () => import(/* webpackChunkName: "about" */ '../views/Family.vue'),
+    meta: {
+      needsUser: true
+    }
   },
   {
     path: '/new',
@@ -53,7 +70,10 @@ const routes = [
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/New.vue')
+    component: () => import(/* webpackChunkName: "about" */ '../views/New.vue'),
+    meta: {
+      needsUser: true
+    }
   },
   {
     path: '/trending',
@@ -61,7 +81,10 @@ const routes = [
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/Trending.vue')
+    component: () => import(/* webpackChunkName: "about" */ '../views/Trending.vue'),
+    meta: {
+      needsUser: true
+    }
   },
   {
     path: '/anime',
@@ -69,7 +92,10 @@ const routes = [
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/Anime.vue')
+    component: () => import(/* webpackChunkName: "about" */ '../views/Anime.vue'),
+    meta: {
+      needsUser: true
+    }
   },
   {
     path: '/houseofdragon',
@@ -78,6 +104,9 @@ const routes = [
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
     component: () => import(/* webpackChunkName: "about" */ '../views/houseofdragon.vue'),
+    meta: {
+      needsUser: true
+    }
   },
   {
     path: '/adminpanel',
@@ -86,12 +115,29 @@ const routes = [
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
     component: () => import(/* webpackChunkName: "about" */ '../views/adminpanel.vue'),
+    meta: {
+      needsUser: true
+    }
   },
 ]
 
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
   routes
-})
+}) 
+
+router.beforeEach((to, from, next) => {
+  console.log("Stara ruta", from.name, " -> nova ruta -> ", to.name, "korisnik", store.currentUser )
+  const noUser = store.currentUser === null;
+
+  if (noUser && to.meta.needsUser){
+    console.error("NE DOPUSTAM")
+  }
+  else {
+    next();
+  }
+
+
+});
 
 export default router
