@@ -51,6 +51,10 @@
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="#"><router-link to="/adminpanel">Adminpanel</router-link></a>
         </li>
+
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#"><router-link to="/houseofdragon">Test</router-link></a>
+        </li>
         
         
       </ul>
