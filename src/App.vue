@@ -34,7 +34,7 @@
         </li>
 
       
-        <li v-if=" ! store.currentUser" class="nav-item">
+        <li  class="nav-item">
           <a class="nav-link active" aria-current="page" href="#"><router-link to="/login">Login</router-link></a>
         </li>
       
@@ -99,6 +99,7 @@ body {
 </style>
 
 <script>
+
   import { auth, onAuthStateChanged, signOut } from "@/firebase";
 
   import store from "@/store";
@@ -107,8 +108,10 @@ body {
 
 
 
+
 onAuthStateChanged(auth, user => {
 
+  const currentRoute = router.currentRoute;
 
   if (user) {
     console.log(user.email);
@@ -117,12 +120,10 @@ onAuthStateChanged(auth, user => {
   else{
     console.log("No User");
     store.currentUser = null;
-
-    if (router.name !== 'login'){
-
-    router.push({name: "login"})
-
-    }
+    
+    if (currentRoute.value.meta.needsUser) {
+			router.push({ name: "login" });
+		}
 
   }
 })
@@ -132,8 +133,7 @@ export default{
   name: "app",
   data (){
     return{
-      store,
-
+      store
     }
   },
   methods: {
