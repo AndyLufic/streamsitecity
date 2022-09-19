@@ -118,18 +118,21 @@ body {
 onAuthStateChanged(auth, user => {
 
   const currentRoute = router.currentRoute;
-
+  console.log(currentRoute)
   if (user) {
     console.log(user.email);
     store.currentUser = user.email;
+    router.push({ name: "home" });
   }
   else{
     console.log("No User");
     store.currentUser = null;
     
-    if (currentRoute.value.meta.needsUser) {
+    if (!currentRoute.value.meta.needsUser) {
 			router.push({ name: "login" });
-		}
+		} else {
+      router.push({ name: "home" });
+    }
 
   }
 })

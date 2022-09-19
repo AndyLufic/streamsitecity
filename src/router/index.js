@@ -104,6 +104,9 @@ const routes = [
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
     component: () => import(/* webpackChunkName: "about" */ '../views/houseofdragon.vue'),
+    meta: {
+      needsUser: true
+    }
   },
   {
     path: '/adminpanel',
@@ -112,6 +115,9 @@ const routes = [
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
     component: () => import(/* webpackChunkName: "about" */ '../views/adminpanel.vue'),
+    meta: {
+      needsUser: true
+    }
   },
 ]
 
@@ -122,7 +128,6 @@ const router = createRouter({
 
 router.beforeEach((to, from, next) => {
   console.log("Stara ruta", from.name, " -> nova ruta -> ", to.name, "korisnik", store.currentUser )
-
   const noUser = store.currentUser === null;
 
   if (noUser && to.meta.needsUser){
