@@ -51,7 +51,9 @@
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="#"><router-link to="/adminpanel">Adminpanel</router-link></a>
         </li>
-        
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="player.html">Player</a>
+        </li>
         
       </ul>
       

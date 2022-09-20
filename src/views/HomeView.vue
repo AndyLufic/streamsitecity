@@ -3,7 +3,8 @@
     <div class="col-12 text-center mt-5">
       <h1 class="text-white pt-4 ">Recommended</h1>
     </div>
-   <!-- <a href="player.html">Player</a>  -->
+   
+  
     <div class="container text-center">
       
     </div>
